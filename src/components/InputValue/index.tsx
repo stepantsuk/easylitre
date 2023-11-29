@@ -1,8 +1,10 @@
 import {
   BaseSyntheticEvent,
+  KeyboardEvent,
   useState,
 } from 'react'
 
+import { KEYBOARD_KEYS } from '../../config/index'
 import { dotToComma } from '../../helpers/dotToComma'
 import { useModal } from '../../hooks/useModal'
 import {
@@ -44,12 +46,18 @@ export const InputValue = ({
 
   const finishEditingPriceAmount = () => {
     if (priceAmount !== '') {
-      
-
       setPriceAmount('')
     }
 
     endEditing()
+  }
+
+  const keyDown = (e: KeyboardEvent) => {
+    if (e.key === KEYBOARD_KEYS.enter) {
+      finishEditingPriceAmount()
+    } else if (e.key === KEYBOARD_KEYS.escape) {
+      endEditing()
+    }
   }
 
   return (
@@ -65,6 +73,7 @@ export const InputValue = ({
               onBlur={finishEditingPriceAmount}
               onChange={onChangePriceAmount}
               onInput={onChangePriceAmount}
+              onKeyDown={keyDown}
               type='number'
               step={isPrice ? '0.01' : '1'}
               min='0'
