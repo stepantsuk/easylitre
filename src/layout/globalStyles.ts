@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${fontFamily};
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     color: ${colors.neutral10};

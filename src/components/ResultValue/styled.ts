@@ -6,6 +6,6 @@ export const InputPriceAmount = styled.div`
   flex: 50%;
   padding: 2px;
   color: ${colors.primary5};
-  border: 1px solid ${colors.primary5};
+  border: 1px solid ${colors.primary4};
   text-align: center;
 `
