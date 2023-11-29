@@ -2,8 +2,8 @@ export const lexics = {
   price: 'Цена, руб',
   weight: 'Вес|Объем, г.|мл.',
   count: 'Количество, шт.',
-  priceWeight: 'Цена за кг|л / руб.',
-  priceCount: 'Цена за шт. / руб.',
+  priceWeight: 'Цена за кг|л, руб.',
+  priceCount: 'Цена за шт., руб.',
 }
 
 export enum KEYBOARD_KEYS {
