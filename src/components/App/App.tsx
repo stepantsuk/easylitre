@@ -4,6 +4,7 @@ import {
   AppWrapper,
   Container,
   ContentWrapper,
+  AppTitle,
 } from './styled'
 
 import {
@@ -102,6 +103,7 @@ export const App = () => {
     priceCount,
     priceWeight,
     productTitle,
+    appTitle,
   } = lexics
 
   const {
@@ -113,6 +115,9 @@ export const App = () => {
     <AppWrapper>
       <Container>
         <ContentWrapper>
+          <AppTitle>
+            {appTitle}
+          </AppTitle>
           <InputValue
             countValue={price}
             isPrice={true}

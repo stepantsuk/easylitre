@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import {
   mobileBreakpoint,
+  colors,
 } from '../../ui-kit/sharedStyles'
 
 
@@ -28,4 +29,11 @@ export const ContentWrapper = styled.div`
   align-items: center;
   justify-content: start;
   min-height: 100vh;
+`
+
+export const AppTitle = styled.h1`
+  font-size: 20px;
+  text-align: center;
+  color: ${colors.primary5};
+  margin-bottom: 10px;
 `

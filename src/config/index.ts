@@ -1,4 +1,5 @@
 export const lexics = {
+  appTitle: 'Калькулятор цен',
   price: 'Цена (руб.)',
   weight: 'Вес (г.) / Объём (мл.)',
   count: 'Количество (шт.)',
