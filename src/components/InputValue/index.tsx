@@ -7,6 +7,7 @@ import {
 import {
   KEYBOARD_KEYS,
   REGEX_DECIMAL,
+  REGEX_INTEGER,
 } from '../../config/index'
 import { dotToComma } from '../../helpers/dotToComma'
 import { useModal } from '../../hooks/useModal'
@@ -38,6 +39,8 @@ export const InputValue = ({
     open: startEditing,
   } = useModal()
 
+  const regExp = isPrice ? REGEX_DECIMAL : REGEX_INTEGER
+
   const onChangePriceAmount = (e: BaseSyntheticEvent) => {
     const inputValue = dotToComma(e.target.value)
     // const inputValue = e.target.value
@@ -45,7 +48,7 @@ export const InputValue = ({
     console.log('REGEX_DECIMAL.test(inputValue)', REGEX_DECIMAL.test(inputValue))
 
 
-    if (REGEX_DECIMAL.test(inputValue)) {
+    if (regExp.test(inputValue)) {
       handleSetPriceAmount(Number(inputValue.replace(',', '.')).toFixed(2))
       setPriceAmount(inputValue);
     }
@@ -79,11 +82,12 @@ export const InputValue = ({
               onChange={onChangePriceAmount}
               onInput={onChangePriceAmount}
               onKeyDown={keyDown}
+              inputMode='numeric'
               // type='number'
               // step={isPrice ? '0.01' : '1'}
               // min='0'
               value={priceAmount}
-              // lang='ru'
+            // lang='ru'
             />
           )
           : (

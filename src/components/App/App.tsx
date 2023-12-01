@@ -28,23 +28,7 @@ type TInputFields = {
   volume: TInputField,
 }
 
-
-
 export const App = () => {
-  // const [inputFields, setInputFields] = useState<TInputFields>(DEFAULT_STATE)
-
-  // const inputFieldsArray = Object.values(inputFields)
-
-  // const handleChangeValue = (amount: number, field: string) => {
-  //   setInputFields({
-  //     ...inputFields,
-  //     [field]: {
-  //       ...inputFields.price,
-  //       countValue: amount,
-  //     },
-  //   })
-  // }
-
   const [price, setPrice] = useState<number>(DEFAULT_PRICE)
   const [weight, setWeight] = useState<number>(DEFAULT_WEIGHT)
   const [count, setCount] = useState<number>(DEFAULT_COUNT)

@@ -34,3 +34,5 @@ export const DEFAULT_STATE = {
 }
 
 export const REGEX_DECIMAL = /^(?!0\d)\d*[.,]?\d*$/
+
+export const REGEX_INTEGER = /^(?!0)\d+/
