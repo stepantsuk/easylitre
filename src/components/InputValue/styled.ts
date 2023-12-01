@@ -7,7 +7,6 @@ export const InputWrapper = styled.div`
   justify-content: space-between;
   gap: 5px;
   width: 100%;
-  /* border-bottom: 1px solid ${colors.primary5}; */
   padding: 5px;
 `
 
@@ -22,6 +21,7 @@ export const InputLexica = styled.div`
 export const InputPriceAmount = styled.div`
   flex: 50%;
   padding: 3px;
+  font-weight: 600;
   color: ${colors.neutral0};
   background-color: ${colors.primary5};
   text-align: center;

@@ -22,27 +22,27 @@ export type TInputField = {
   lexic: string,
 }
 
-type TInputFields = {
-  price: TInputField,
-  weight: TInputField,
-  volume: TInputField,
-}
+// type TInputFields = {
+//   price: TInputField,
+//   weight: TInputField,
+//   volume: TInputField,
+// }
 
 export const App = () => {
   const [price, setPrice] = useState<number>(DEFAULT_PRICE)
   const [weight, setWeight] = useState<number>(DEFAULT_WEIGHT)
   const [count, setCount] = useState<number>(DEFAULT_COUNT)
 
-  const handleSetPrice = (str: string) => {
-    setPrice(parseFloat(str))
+  type THandleSet = {
+    fn: React.Dispatch<React.SetStateAction<number>>,
+    str: string,
   }
 
-  const handleSetWeight = (str: string) => {
-    setWeight(parseFloat(str))
-  }
-
-  const handleSetCount = (str: string) => {
-    setCount(parseFloat(str))
+  const handleSet = ({
+    fn,
+    str,
+  }: THandleSet) => {
+    fn(parseFloat(str))
   }
 
   const {
@@ -60,17 +60,17 @@ export const App = () => {
           <InputValue
             countValue={price}
             isPrice={true}
-            handleSetPriceAmount={handleSetPrice}
+            handleSetPriceAmount={(str) => handleSet({ fn: setPrice, str })}
             lexic={priceLexic}
           />
           <InputValue
             countValue={weight}
-            handleSetPriceAmount={handleSetWeight}
+            handleSetPriceAmount={(str) => handleSet({ fn: setWeight, str })}
             lexic={weightLexic}
           />
           <InputValue
             countValue={count}
-            handleSetPriceAmount={handleSetCount}
+            handleSetPriceAmount={(str) => handleSet({ fn: setCount, str })}
             lexic={countLexic}
           />
           <ResultPrice

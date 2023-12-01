@@ -43,10 +43,6 @@ export const InputValue = ({
 
   const onChangePriceAmount = (e: BaseSyntheticEvent) => {
     const inputValue = dotToComma(e.target.value)
-    // const inputValue = e.target.value
-    console.log('inputValue', inputValue)
-    console.log('REGEX_DECIMAL.test(inputValue)', REGEX_DECIMAL.test(inputValue))
-
 
     if (regExp.test(inputValue)) {
       handleSetPriceAmount(Number(inputValue.replace(',', '.')).toFixed(2))
@@ -61,10 +57,8 @@ export const InputValue = ({
   }
 
   const keyDown = (e: KeyboardEvent) => {
-    if (e.key === KEYBOARD_KEYS.enter) {
+    if ([`${KEYBOARD_KEYS.escape}`, `${KEYBOARD_KEYS.enter}`].includes(e.key)) {
       finishEditingPriceAmount()
-    } else if (e.key === KEYBOARD_KEYS.escape) {
-      endEditing()
     }
   }
 
