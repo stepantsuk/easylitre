@@ -1,17 +1,23 @@
 export const lexics = {
-  price: 'Цена, руб',
-  weight: 'Вес|Объем, г.|мл.',
-  count: 'Количество, шт.',
-  priceWeight: 'Цена за кг|л, руб.',
-  priceCount: 'Цена за шт., руб.',
+  price: 'Цена (руб.)',
+  weight: 'Вес (г.) / Объём (мл.)',
+  count: 'Количество (шт.)',
+  priceWeight: 'Цена за 1 кг|л, руб.',
+  priceCount: 'Цена за 1 шт., руб.',
   productTitle: 'Товар',
   productsListTitle: 'Список товаров:',
-  defaultProductTitle:'Введи название',
+  defaultProductTitle: 'Введи название',
 }
 
 export enum KEYBOARD_KEYS {
   enter = 'Enter',
   escape = 'Escape',
+}
+
+export enum VALUE_TYPE {
+  countType = 'countType',
+  priceType = 'priceType',
+  weightType = 'weightType',
 }
 
 export const DEFAULT_PRICE = 0

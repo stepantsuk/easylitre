@@ -13,6 +13,7 @@ import {
   DEFAULT_WEIGHT,
   DEFAULT_PRODUCT_TITLE,
   BUTTON_TYPE,
+  VALUE_TYPE,
 } from '../../config'
 
 import { InputValue } from '../InputValue'
@@ -69,8 +70,13 @@ export const App = () => {
   }
 
   const disabledSaveProduct = !(!!price && !!(weight || count))
+  const disabledCleanCalc = !(!!price || !!weight || !!count || !!productName)
 
-  console.log('canSaveProuct', disabledSaveProduct)
+  const {
+    countType,
+    priceType,
+    weightType,
+  } = VALUE_TYPE
 
   const handleSaveProduct = () => {
     const product: TProductItem = {
@@ -112,16 +118,19 @@ export const App = () => {
             isPrice={true}
             handleSetPriceAmount={(str) => handleSet({ fn: setPrice, str })}
             lexic={priceLexic}
+            valueType={priceType}
           />
           <InputValue
             countValue={weight}
             handleSetPriceAmount={(str) => handleSet({ fn: setWeight, str })}
             lexic={weightLexic}
+            valueType={weightType}
           />
           <InputValue
             countValue={count}
             handleSetPriceAmount={(str) => handleSet({ fn: setCount, str })}
             lexic={countLexic}
+            valueType={countType}
           />
           <ResultPrice
             countValue={weight / 1000}
@@ -144,6 +153,7 @@ export const App = () => {
             buttonType={addProduct}
           />
           <Button
+            disabled={disabledCleanCalc}
             onClick={cleanCount}
             buttonType={cleanCalc}
           />

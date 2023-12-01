@@ -35,6 +35,7 @@ export const ProductDelete = styled.div`
   color: ${colors.red4};
   background-color: ${colors.red1};
   border: 2px solid ${colors.red4};
+  cursor: pointer;
 `
 
 export const ProductValues = styled.div`

@@ -8,6 +8,7 @@ import {
   KEYBOARD_KEYS,
   REGEX_DECIMAL,
   REGEX_INTEGER,
+  VALUE_TYPE,
 } from '../../config/index'
 import { dotToComma } from '../../helpers/dotToComma'
 import { useModal } from '../../hooks/useModal'
@@ -23,6 +24,12 @@ type TInputValue = {
   handleSetPriceAmount: (str: string) => void,
   isPrice?: boolean,
   lexic: string,
+  valueType: string,
+}
+
+type TFormattedValue = {
+  valueType: string,
+  count: number,
 }
 
 export const InputValue = ({
@@ -30,6 +37,7 @@ export const InputValue = ({
   handleSetPriceAmount,
   isPrice,
   lexic,
+  valueType,
 }: TInputValue) => {
   const [priceAmount, setPriceAmount] = useState<string>('')
 
@@ -38,6 +46,25 @@ export const InputValue = ({
     isOpen: isEditing,
     open: startEditing,
   } = useModal()
+
+  const {
+    countType,
+    priceType,
+    weightType,
+  } = VALUE_TYPE
+
+  const getPlaceHolder = (typeValue: string) => {
+    switch (true) {
+      case typeValue === countType:
+        return 'штук в упаковке'
+      case typeValue === priceType:
+        return 'цена в рублях'
+      case typeValue === weightType:
+        return 'граммы или мл.'
+      default:
+        return '';
+    }
+  }
 
   const regExp = isPrice ? REGEX_DECIMAL : REGEX_INTEGER
 
@@ -62,6 +89,21 @@ export const InputValue = ({
     }
   }
 
+  const formattedValue = ({
+    count,
+    valueType,
+  }: TFormattedValue) => {
+    const isPrice = valueType === priceType
+
+    return new Intl.NumberFormat(
+      'ru-RU',
+      {
+        minimumFractionDigits: isPrice ? 2 : 0,
+        maximumFractionDigits: isPrice ? 2 : 0,
+      },
+    ).format(count)
+  }
+
   return (
     <InputWrapper>
       <InputLexica>
@@ -77,6 +119,7 @@ export const InputValue = ({
               onInput={onChangePriceAmount}
               onKeyDown={keyDown}
               inputMode='numeric'
+              placeholder={getPlaceHolder(valueType)}
               // type='number'
               // step={isPrice ? '0.01' : '1'}
               // min='0'
@@ -88,10 +131,16 @@ export const InputValue = ({
             <InputPriceAmount
               onClick={startEditing}
             >
-              {isPrice
+              {/* {isPrice
                 ? dotToComma(countValue.toFixed(2))
                 : countValue
-              }
+              } */}
+              {formattedValue(
+                {
+                  valueType,
+                  count: countValue,
+                }
+              )}
             </InputPriceAmount>
           )
       }

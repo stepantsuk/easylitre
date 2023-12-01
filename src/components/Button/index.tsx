@@ -25,6 +25,7 @@ export const Button = ({
       <ButtonFrame
         onClick={onClick}
         disabled={disabled}
+        lexic={buttonType}
       >
         {lexic}
       </ButtonFrame>
