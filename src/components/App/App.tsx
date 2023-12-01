@@ -11,10 +11,15 @@ import {
   DEFAULT_COUNT,
   DEFAULT_PRICE,
   DEFAULT_WEIGHT,
+  DEFAULT_PRODUCT_TITLE,
+  BUTTON_TYPE,
 } from '../../config'
 
 import { InputValue } from '../InputValue'
 import { ResultPrice } from '../ResultValue'
+import { InputProductName } from '../InputProductName'
+import { ProductsList } from '../ProductsList'
+import { Button } from '../Button'
 
 export type TInputField = {
   countValue: number,
@@ -28,15 +33,26 @@ export type TInputField = {
 //   volume: TInputField,
 // }
 
+export type TProductItem = {
+  count: number,
+  name: string,
+  price: number,
+  weight: number,
+  id: number,
+}
+
+export type THandleSet = {
+  fn: React.Dispatch<React.SetStateAction<number>>,
+  str: string,
+}
+
 export const App = () => {
+  const [products, setProducts] = useState<Array<TProductItem>>([])
+
   const [price, setPrice] = useState<number>(DEFAULT_PRICE)
   const [weight, setWeight] = useState<number>(DEFAULT_WEIGHT)
   const [count, setCount] = useState<number>(DEFAULT_COUNT)
-
-  type THandleSet = {
-    fn: React.Dispatch<React.SetStateAction<number>>,
-    str: string,
-  }
+  const [productName, setProductName] = useState<string>(DEFAULT_PRODUCT_TITLE)
 
   const handleSet = ({
     fn,
@@ -45,13 +61,47 @@ export const App = () => {
     fn(parseFloat(str))
   }
 
+  const cleanCount = () => {
+    setPrice(DEFAULT_PRICE)
+    setWeight(DEFAULT_WEIGHT)
+    setCount(DEFAULT_COUNT)
+    setProductName(DEFAULT_PRODUCT_TITLE)
+  }
+
+  const disabledSaveProduct = !(!!price && !!(weight || count))
+
+  console.log('canSaveProuct', disabledSaveProduct)
+
+  const handleSaveProduct = () => {
+    const product: TProductItem = {
+      count: count,
+      id: Date.now(),
+      name: productName ? productName : 'Без названия',
+      price: price,
+      weight: weight,
+    }
+    setProducts([...products, product])
+    cleanCount()
+  }
+
+  const handleDeleteProduct = (idProduct: number) => {
+    const filtredProducts = products.filter(({ id }) => idProduct !== id)
+    setProducts(filtredProducts)
+  }
+
   const {
     count: countLexic,
     price: priceLexic,
     weight: weightLexic,
     priceCount,
     priceWeight,
+    productTitle,
   } = lexics
+
+  const {
+    addProduct,
+    cleanCalc,
+  } = BUTTON_TYPE
 
   return (
     <AppWrapper>
@@ -82,6 +132,24 @@ export const App = () => {
             countValue={count}
             lexic={priceCount}
             price={price}
+          />
+          <InputProductName
+            handleSetName={setProductName}
+            lexic={productTitle}
+            productName={productName}
+          />
+          <Button
+            disabled={disabledSaveProduct}
+            onClick={handleSaveProduct}
+            buttonType={addProduct}
+          />
+          <Button
+            onClick={cleanCount}
+            buttonType={cleanCalc}
+          />
+          <ProductsList
+            products={products}
+            onDeleteProduct={handleDeleteProduct}
           />
         </ContentWrapper>
       </Container>

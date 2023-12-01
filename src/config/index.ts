@@ -4,6 +4,9 @@ export const lexics = {
   count: 'Количество, шт.',
   priceWeight: 'Цена за кг|л, руб.',
   priceCount: 'Цена за шт., руб.',
+  productTitle: 'Товар',
+  productsListTitle: 'Список товаров:',
+  defaultProductTitle:'Введи название',
 }
 
 export enum KEYBOARD_KEYS {
@@ -14,6 +17,7 @@ export enum KEYBOARD_KEYS {
 export const DEFAULT_PRICE = 0
 export const DEFAULT_WEIGHT = 0
 export const DEFAULT_COUNT = 0
+export const DEFAULT_PRODUCT_TITLE = ''
 
 export const DEFAULT_STATE = {
   price: {
@@ -36,3 +40,15 @@ export const DEFAULT_STATE = {
 export const REGEX_DECIMAL = /^(?!0\d)\d*[.,]?\d*$/
 
 export const REGEX_INTEGER = /^(?!0)\d*$/
+
+export enum BUTTON_TYPE {
+  addProduct = 'addProduct',
+  cleanCalc = 'cleanCalc',
+
+  // backToMain = 'backToMain',
+  // changeTask = 'changeTask',
+  // confirmYes = 'confirmYes',
+  // confrimNo = 'confirmNo',
+  // deleteTask = 'deleteTask',
+  // saveTask = 'saveTask'
+}

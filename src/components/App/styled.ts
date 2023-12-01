@@ -22,9 +22,10 @@ export const Container = styled.div`
 `
 
 export const ContentWrapper = styled.div`
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   min-height: 100vh;
 `
