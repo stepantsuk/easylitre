@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
     padding: 0;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 20px;
   }
 

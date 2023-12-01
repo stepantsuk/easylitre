@@ -4,7 +4,10 @@ import {
   useState,
 } from 'react'
 
-import { KEYBOARD_KEYS } from '../../config/index'
+import {
+  KEYBOARD_KEYS,
+  REGEX_DECIMAL,
+} from '../../config/index'
 import { dotToComma } from '../../helpers/dotToComma'
 import { useModal } from '../../hooks/useModal'
 import {
@@ -36,18 +39,20 @@ export const InputValue = ({
   } = useModal()
 
   const onChangePriceAmount = (e: BaseSyntheticEvent) => {
-    const inputValue = e.target.value
-    const regExp = /^[0-9]+([.][0-9]+)?/
-    if (regExp.test(inputValue) || inputValue === '') {
-      handleSetPriceAmount(Number(inputValue).toFixed(2))
-      setPriceAmount(inputValue)
+    const inputValue = dotToComma(e.target.value)
+    // const inputValue = e.target.value
+    console.log('inputValue', inputValue)
+    console.log('REGEX_DECIMAL.test(inputValue)', REGEX_DECIMAL.test(inputValue))
+
+
+    if (REGEX_DECIMAL.test(inputValue)) {
+      handleSetPriceAmount(Number(inputValue.replace(',', '.')).toFixed(2))
+      setPriceAmount(inputValue);
     }
   }
 
   const finishEditingPriceAmount = () => {
-    if (priceAmount !== '') {
-      setPriceAmount('')
-    }
+    setPriceAmount('')
 
     endEditing()
   }
@@ -74,11 +79,11 @@ export const InputValue = ({
               onChange={onChangePriceAmount}
               onInput={onChangePriceAmount}
               onKeyDown={keyDown}
-              type='number'
-              step={isPrice ? '0.01' : '1'}
-              min='0'
+              // type='number'
+              // step={isPrice ? '0.01' : '1'}
+              // min='0'
               value={priceAmount}
-              lang='ru'
+              // lang='ru'
             />
           )
           : (

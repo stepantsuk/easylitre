@@ -6,7 +6,12 @@ import {
   ContentWrapper,
 } from './styled'
 
-import { lexics } from '../../config'
+import {
+  lexics,
+  DEFAULT_COUNT,
+  DEFAULT_PRICE,
+  DEFAULT_WEIGHT,
+} from '../../config'
 
 import { InputValue } from '../InputValue'
 import { ResultPrice } from '../ResultValue'
@@ -23,9 +28,6 @@ type TInputFields = {
   volume: TInputField,
 }
 
-const DEFAULT_PRICE = 0
-const DEFAULT_WEIGHT = 0
-const DEFAULT_COUNT = 0
 
 
 export const App = () => {

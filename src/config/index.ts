@@ -11,6 +11,10 @@ export enum KEYBOARD_KEYS {
   escape = 'Escape',
 }
 
+export const DEFAULT_PRICE = 0
+export const DEFAULT_WEIGHT = 0
+export const DEFAULT_COUNT = 0
+
 export const DEFAULT_STATE = {
   price: {
     countValue: 0,
@@ -28,3 +32,5 @@ export const DEFAULT_STATE = {
     lexic: lexics.count,
   },
 }
+
+export const REGEX_DECIMAL = /^(?!0\d)\d*[.,]?\d*$/
