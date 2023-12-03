@@ -6,7 +6,6 @@ export const ProductNameWrapper = styled.div`
   justify-content: space-between;
   gap: 5px;
   width: 100%;
-  padding: 5px;
 `
 
 export const ProductNameLexica = styled.div`
