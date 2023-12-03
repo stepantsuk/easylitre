@@ -8,6 +8,8 @@ export const lexics = {
   productTitle: 'Товар',
   productsListTitle: 'Список товаров:',
   defaultProductTitle: 'Введи название',
+  productEditBtn: 'Изменить',
+  saveChanges: 'Сохранить изменения ?'
 }
 
 export enum KEYBOARD_KEYS {
@@ -52,6 +54,8 @@ export enum BUTTON_TYPE {
   addProduct = 'addProduct',
   cleanCalc = 'cleanCalc',
   cleanList = 'cleanList',
+  no = 'no',
+  yes = 'yes',
 
   // backToMain = 'backToMain',
   // changeTask = 'changeTask',

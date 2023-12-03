@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import { colors } from '../../ui-kit/sharedStyles'
 
@@ -27,10 +27,20 @@ export const ProductName = styled.div`
   text-overflow: ellipsis;
 `
 
+export const ProductTitleRightBlock = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+`
+
+export const ProductEditBtn = styled.div`
+  border-bottom: 1px solid ${colors.primary5};
+`
+
 export const ProductDelete = styled.div`
   display: flex;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   justify-content: center;
   align-items: center;
   color: ${colors.red4};

@@ -16,24 +16,22 @@ import {
   BUTTON_TYPE,
   VALUE_TYPE,
 } from '../../config'
-
+import {
+  removeLocalStorage,
+  setLocalStorage
+} from '../../helpers/localStorage'
+import { getInitialProducts } from './helpers/getInitialProducts'
 import { InputValue } from '../InputValue'
 import { ResultPrice } from '../ResultValue'
 import { InputProductName } from '../InputProductName'
 import { ProductsList } from '../ProductsList'
-import { Button } from '../Button'
+import { Button } from '../../ui-kit/Button'
 
 export type TInputField = {
   countValue: number,
   field: string,
   lexic: string,
 }
-
-// type TInputFields = {
-//   price: TInputField,
-//   weight: TInputField,
-//   volume: TInputField,
-// }
 
 export type TProductItem = {
   count: number,
@@ -49,7 +47,7 @@ export type THandleSet = {
 }
 
 export const App = () => {
-  const [products, setProducts] = useState<Array<TProductItem>>([])
+  const [products, setProducts] = useState<Array<TProductItem>>(getInitialProducts())
 
   const [price, setPrice] = useState<number>(DEFAULT_PRICE)
   const [weight, setWeight] = useState<number>(DEFAULT_WEIGHT)
@@ -71,6 +69,7 @@ export const App = () => {
   }
 
   const handleCleanList = () => {
+    removeLocalStorage('products')
     setProducts([])
   }
 
@@ -91,12 +90,24 @@ export const App = () => {
       price: price,
       weight: weight,
     }
-    setProducts([...products, product])
+    const productsToState = [...products, product]
+    setProducts(productsToState)
+    setLocalStorage('products', JSON.stringify(productsToState))
     cleanCount()
+  }
+
+  const handleSaveEdit = (product: TProductItem) => {
+    const { id: idProductToChange } = product
+    const productToChangeIndex = products.findIndex(({id}) => id === idProductToChange)
+    const productsToState = [...products]
+    productsToState[productToChangeIndex] = product
+    setProducts(productsToState)
+    setLocalStorage('products', JSON.stringify(productsToState))
   }
 
   const handleDeleteProduct = (idProduct: number) => {
     const filtredProducts = products.filter(({ id }) => idProduct !== id)
+    setLocalStorage('products', JSON.stringify(filtredProducts))
     setProducts(filtredProducts)
   }
 
@@ -170,6 +181,7 @@ export const App = () => {
             products={products}
             onDeleteProduct={handleDeleteProduct}
             onCleanList={handleCleanList}
+            onSaveEdit={handleSaveEdit}
           />
         </ContentWrapper>
       </Container>

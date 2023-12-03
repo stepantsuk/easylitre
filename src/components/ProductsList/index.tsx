@@ -4,7 +4,7 @@ import {
   BUTTON_TYPE,
 } from '../../config'
 import { ProductItem } from '../ProductItem'
-import { Button } from '../Button'
+import { Button } from '../../ui-kit/Button'
 import {
   ProductsContainer,
   DividerLine,
@@ -17,12 +17,14 @@ type TProductsList = {
   products: Array<TProductItem>,
   onDeleteProduct: (idProduct: number) => void,
   onCleanList: () => void,
+  onSaveEdit: (product: TProductItem) => void,
 }
 
 export const ProductsList = ({
   products,
   onDeleteProduct,
   onCleanList,
+  onSaveEdit,
 }: TProductsList) => {
   const { productsListTitle } = lexics
   const { cleanList } = BUTTON_TYPE
@@ -63,6 +65,7 @@ export const ProductsList = ({
               price={price}
               weight={weight}
               onDeleteProduct={onDeleteProduct}
+              onSaveEdit={onSaveEdit}
             />))
         }
       </ProductsListContainer>

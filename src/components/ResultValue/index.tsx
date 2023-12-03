@@ -5,8 +5,6 @@ import {
 
 import { InputPriceAmount } from './styled'
 
-import { dotToComma } from '../../helpers/dotToComma'
-
 type TResultPrice = {
   countValue: number,
   lexic: string,

@@ -11,6 +11,8 @@ export const useButton = ({
     addProduct,
     cleanCalc,
     cleanList,
+    no,
+    yes,
   } = BUTTON_TYPE
 
   const getLexic = () => {
@@ -21,6 +23,10 @@ export const useButton = ({
         return 'Очистить поля'
       case cleanList:
         return 'Очистить список'
+      case yes:
+        return 'Да'
+      case no:
+        return 'Нет'
       // case confirmYes:
       //   return 'Да'
       // case confrimNo:

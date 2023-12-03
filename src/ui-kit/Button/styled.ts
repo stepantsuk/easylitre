@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/macro'
 
 import { BUTTON_TYPE } from '../../config'
 import { colors } from '../../ui-kit/sharedStyles'
@@ -38,7 +38,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
             cursor: auto;
           }
         `
-      case buttonType === BUTTON_TYPE.addProduct:
+      case [`${BUTTON_TYPE.addProduct}`, `${BUTTON_TYPE.yes}`].includes(buttonType):
         return css`
           {
             border-color: ${colors.green5};
@@ -46,7 +46,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
             color: ${colors.green5};
           }
         `
-      case [`${BUTTON_TYPE.cleanCalc}`, `${BUTTON_TYPE.cleanList}`].includes(buttonType):
+      case [`${BUTTON_TYPE.cleanCalc}`, `${BUTTON_TYPE.cleanList}`, `${BUTTON_TYPE.no}`].includes(buttonType):
         return css`
           {
             border-color: ${colors.red4};

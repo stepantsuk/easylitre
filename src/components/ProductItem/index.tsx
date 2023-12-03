@@ -1,9 +1,13 @@
 import type { TProductItem } from '../App/App'
 import { lexics } from '../../config'
+import { useModal } from '../../hooks/useModal'
+import { EditProduct } from '../EditProduct'
 import { ResultPrice } from '../ResultValue'
 import {
   ProductItemContainer,
   ProductTitle,
+  ProductTitleRightBlock,
+  ProductEditBtn,
   ProductName,
   ProductDelete,
   ProductValues,
@@ -11,6 +15,7 @@ import {
 
 type TProduct = {
   onDeleteProduct: (idProduct: number) => void,
+  onSaveEdit: (product: TProductItem) => void,
 } & TProductItem
 
 export const ProductItem = ({
@@ -20,27 +25,51 @@ export const ProductItem = ({
   price,
   weight,
   onDeleteProduct,
+  onSaveEdit,
 }: TProduct) => {
   const {
     priceWeight,
     priceCount,
+    productEditBtn,
   } = lexics
+
+  const {
+    close: closeEdit,
+    isOpen: isOpenEdit,
+    open: openEdit,
+  } = useModal()
 
   return (
     <ProductItemContainer>
+      {isOpenEdit && (
+        <EditProduct
+          close={closeEdit}
+          countProduct={count}
+          nameProduct={name}
+          priceProduct={price}
+          weightProduct={weight}
+          onSaveEdit={onSaveEdit}
+          idProduct={id}
+        />
+      )}
       <ProductTitle>
         <ProductName>
           {name}
         </ProductName>
-        <ProductDelete
-          onClick={() => onDeleteProduct(id)}
-        >
-          X
-        </ProductDelete>
+        <ProductTitleRightBlock>
+          <ProductEditBtn onClick={openEdit}>
+            {productEditBtn}
+          </ProductEditBtn>
+          <ProductDelete
+            onClick={() => onDeleteProduct(id)}
+          >
+            X
+          </ProductDelete>
+        </ProductTitleRightBlock>
       </ProductTitle>
       <ProductValues>
         <ResultPrice
-          countValue={weight}
+          countValue={weight / 1000}
           lexic={priceWeight}
           price={price}
         />
