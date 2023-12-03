@@ -70,6 +70,10 @@ export const App = () => {
     setProductName(DEFAULT_PRODUCT_TITLE)
   }
 
+  const handleCleanList = () => {
+    setProducts([])
+  }
+
   const disabledSaveProduct = !(!!price && !!(weight || count))
   const disabledCleanCalc = !(!!price || !!weight || !!count || !!productName)
 
@@ -165,6 +169,7 @@ export const App = () => {
           <ProductsList
             products={products}
             onDeleteProduct={handleDeleteProduct}
+            onCleanList={handleCleanList}
           />
         </ContentWrapper>
       </Container>

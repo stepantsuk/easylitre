@@ -6,13 +6,13 @@ import { colors } from '../../ui-kit/sharedStyles'
 export const ButtonContainer = styled.div`
   width: 100%;
   display: flex;
-  padding: 5px;
+  /* padding: 5px; */
   color: ${colors.primary5};
 `
 
 type TButtonFrame = {
   disabled?: boolean,
-  lexic?: string,
+  buttonType: string,
 }
 
 export const ButtonFrame = styled.button<TButtonFrame>`
@@ -27,7 +27,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
   cursor: pointer;
   border: 2px solid ${colors.primary5};
 
-  ${({ lexic, disabled }) => {
+  ${({ buttonType, disabled }) => {
     switch (true) {
       case disabled:
         return css`
@@ -38,7 +38,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
             cursor: auto;
           }
         `
-      case lexic === BUTTON_TYPE.addProduct:
+      case buttonType === BUTTON_TYPE.addProduct:
         return css`
           {
             border-color: ${colors.green5};
@@ -46,7 +46,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
             color: ${colors.green5};
           }
         `
-      case lexic === BUTTON_TYPE.cleanCalc:
+      case [`${BUTTON_TYPE.cleanCalc}`, `${BUTTON_TYPE.cleanList}`].includes(buttonType):
         return css`
           {
             border-color: ${colors.red4};

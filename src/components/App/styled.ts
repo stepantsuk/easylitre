@@ -29,6 +29,7 @@ export const ContentWrapper = styled.div`
   align-items: center;
   justify-content: start;
   min-height: 100vh;
+  gap: 5px;
 `
 
 export const AppTitle = styled.h1`

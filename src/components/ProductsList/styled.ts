@@ -17,10 +17,17 @@ export const DividerLine = styled.div`
   background-color: ${colors.primary5};
 `
 
+export const ProductsListHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
 export const ProductsListTitle = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
   padding-left: 6px;
-  text-align: left;
   color: ${colors.primary5};
   font-weight: 600;
 `
@@ -31,6 +38,6 @@ export const ProductsListContainer = styled.ul`
   /* justify-content: space-between; */
   gap: 5px;
   width: 100%;
-  padding: 5px;
+  /* padding: 5px; */
   /* border: 1px solid ${colors.primary5} */
 `

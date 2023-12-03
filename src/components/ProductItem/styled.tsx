@@ -5,13 +5,14 @@ import { colors } from '../../ui-kit/sharedStyles'
 export const ProductItemContainer = styled.li`
   display: flex;
   flex-direction: column;
+  padding: 2px;
+  gap: 2px;
   border: 1px solid ${colors.primary5};
   width: 100%;
   color: ${colors.primary5};
 `
 
 export const ProductTitle = styled.div`
-  padding: 2px;
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -41,6 +42,7 @@ export const ProductDelete = styled.div`
 export const ProductValues = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 2px;
 `
 
 export const InputLexica = styled.div`

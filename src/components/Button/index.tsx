@@ -16,16 +16,14 @@ export const Button = ({
   disabled,
   onClick,
 }: TButton) => {
-  const { lexic } = useButton({
-    buttonType,
-  })
+  const { lexic } = useButton({ buttonType })
 
   return (
     <ButtonContainer>
       <ButtonFrame
         onClick={onClick}
         disabled={disabled}
-        lexic={buttonType}
+        buttonType={buttonType}
       >
         {lexic}
       </ButtonFrame>

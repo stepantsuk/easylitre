@@ -1,9 +1,9 @@
 export const lexics = {
   appTitle: 'Калькулятор цен',
   price: 'Цена (руб.)',
-  weight: 'Вес (г.) / Объём (мл.)',
+  weight: 'Вес (г.)/Объём (мл.)',
   count: 'Количество (шт.)',
-  priceWeight: 'Цена за 1 кг|л, руб.',
+  priceWeight: 'Цена за 1 кг/л, руб.',
   priceCount: 'Цена за 1 шт., руб.',
   productTitle: 'Товар',
   productsListTitle: 'Список товаров:',
@@ -51,6 +51,7 @@ export const REGEX_INTEGER = /^(?!0)\d*$/
 export enum BUTTON_TYPE {
   addProduct = 'addProduct',
   cleanCalc = 'cleanCalc',
+  cleanList = 'cleanList',
 
   // backToMain = 'backToMain',
   // changeTask = 'changeTask',

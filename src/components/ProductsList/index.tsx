@@ -1,9 +1,14 @@
 import type { TProductItem } from '../App/App'
-import { lexics } from '../../config'
+import {
+  lexics,
+  BUTTON_TYPE,
+} from '../../config'
 import { ProductItem } from '../ProductItem'
+import { Button } from '../Button'
 import {
   ProductsContainer,
   DividerLine,
+  ProductsListHeader,
   ProductsListTitle,
   ProductsListContainer,
 } from './styled'
@@ -11,13 +16,16 @@ import {
 type TProductsList = {
   products: Array<TProductItem>,
   onDeleteProduct: (idProduct: number) => void,
+  onCleanList: () => void,
 }
 
 export const ProductsList = ({
   products,
   onDeleteProduct,
+  onCleanList,
 }: TProductsList) => {
   const { productsListTitle } = lexics
+  const { cleanList } = BUTTON_TYPE
 
   const isProductsEmpty = products.length === 0
 
@@ -26,9 +34,17 @@ export const ProductsList = ({
   return (
     <ProductsContainer>
       <DividerLine />
-      <ProductsListTitle>
-        {`${productsListTitle} ${additionalLexic}`}
-      </ProductsListTitle>
+      <ProductsListHeader>
+        <ProductsListTitle>
+          {`${productsListTitle} ${additionalLexic}`}
+        </ProductsListTitle>
+        {!isProductsEmpty && (
+          <Button
+            buttonType={cleanList}
+            onClick={onCleanList}
+          />
+        )}
+      </ProductsListHeader>
       <ProductsListContainer>
         {
           (!isProductsEmpty)
@@ -49,7 +65,6 @@ export const ProductsList = ({
               onDeleteProduct={onDeleteProduct}
             />))
         }
-        {/* <ProductItem /> */}
       </ProductsListContainer>
     </ProductsContainer>
   )
