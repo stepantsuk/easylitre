@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.js": "/easylitre/static/js/main.5fe0a313.js",
+    "main.js": "/easylitre/static/js/main.7ced1054.js",
     "service-worker.js": "/easylitre/service-worker.js",
     "index.html": "/easylitre/index.html",
-    "main.5fe0a313.js.map": "/easylitre/static/js/main.5fe0a313.js.map"
+    "static/media/close.svg": "/easylitre/static/media/close.eecbac887572e0b1afdf9b425a195e94.svg",
+    "main.7ced1054.js.map": "/easylitre/static/js/main.7ced1054.js.map"
   },
   "entrypoints": [
-    "static/js/main.5fe0a313.js"
+    "static/js/main.7ced1054.js"
   ]
 }
