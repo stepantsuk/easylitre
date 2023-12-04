@@ -2,9 +2,13 @@ import { useState } from 'react'
 
 import {
   AppWrapper,
+  AppHeaderFrame,
+  AppHeader,
   Container,
   ContentWrapper,
   AppTitle,
+  CalculatorFrame,
+  CalculatorColumn,
 } from './styled'
 
 import {
@@ -98,7 +102,7 @@ export const App = () => {
 
   const handleSaveEdit = (product: TProductItem) => {
     const { id: idProductToChange } = product
-    const productToChangeIndex = products.findIndex(({id}) => id === idProductToChange)
+    const productToChangeIndex = products.findIndex(({ id }) => id === idProductToChange)
     const productsToState = [...products]
     productsToState[productToChangeIndex] = product
     setProducts(productsToState)
@@ -128,63 +132,73 @@ export const App = () => {
 
   return (
     <AppWrapper>
-      <Container>
-        <ContentWrapper>
-          <AppTitle>
-            {appTitle}
-          </AppTitle>
-          <InputValue
-            countValue={price}
-            isPrice={true}
-            handleSetPriceAmount={(str) => handleSet({ fn: setPrice, str })}
-            lexic={priceLexic}
-            valueType={priceType}
-          />
-          <InputValue
-            countValue={weight}
-            handleSetPriceAmount={(str) => handleSet({ fn: setWeight, str })}
-            lexic={weightLexic}
-            valueType={weightType}
-          />
-          <InputValue
-            countValue={count}
-            handleSetPriceAmount={(str) => handleSet({ fn: setCount, str })}
-            lexic={countLexic}
-            valueType={countType}
-          />
-          <ResultPrice
-            countValue={weight / 1000}
-            lexic={priceWeight}
-            price={price}
-          />
-          <ResultPrice
-            countValue={count}
-            lexic={priceCount}
-            price={price}
-          />
-          <InputProductName
-            handleSetName={setProductName}
-            lexic={productTitle}
-            productName={productName}
-          />
-          <Button
-            disabled={disabledSaveProduct}
-            onClick={handleSaveProduct}
-            buttonType={addProduct}
-          />
-          <Button
-            disabled={disabledCleanCalc}
-            onClick={cleanCount}
-            buttonType={cleanCalc}
-          />
-          <ProductsList
-            products={products}
-            onDeleteProduct={handleDeleteProduct}
-            onCleanList={handleCleanList}
-            onSaveEdit={handleSaveEdit}
-          />
-        </ContentWrapper>
-      </Container>
+      <AppHeaderFrame>
+        <AppHeader>
+          <Container>
+            <AppTitle>
+              {appTitle}
+            </AppTitle>
+          </Container>
+        </AppHeader>
+      </AppHeaderFrame>
+      <ContentWrapper>
+        <CalculatorFrame>
+          <Container>
+            <CalculatorColumn>
+              <InputValue
+                countValue={price}
+                isPrice={true}
+                handleSetPriceAmount={(str) => handleSet({ fn: setPrice, str })}
+                lexic={priceLexic}
+                valueType={priceType}
+              />
+              <InputValue
+                countValue={weight}
+                handleSetPriceAmount={(str) => handleSet({ fn: setWeight, str })}
+                lexic={weightLexic}
+                valueType={weightType}
+              />
+              <InputValue
+                countValue={count}
+                handleSetPriceAmount={(str) => handleSet({ fn: setCount, str })}
+                lexic={countLexic}
+                valueType={countType}
+              />
+              <ResultPrice
+                countValue={weight / 1000}
+                lexic={priceWeight}
+                price={price}
+              />
+              <ResultPrice
+                countValue={count}
+                lexic={priceCount}
+                price={price}
+              />
+              <InputProductName
+                handleSetName={setProductName}
+                lexic={productTitle}
+                productName={productName}
+              />
+              <Button
+                disabled={disabledSaveProduct}
+                onClick={handleSaveProduct}
+                buttonType={addProduct}
+              />
+              <Button
+                disabled={disabledCleanCalc}
+                onClick={cleanCount}
+                buttonType={cleanCalc}
+              />
+            </CalculatorColumn>
+          </Container>
+        </CalculatorFrame>
+        <ProductsList
+          products={products}
+          onDeleteProduct={handleDeleteProduct}
+          onCleanList={handleCleanList}
+          onSaveEdit={handleSaveEdit}
+        />
+      </ContentWrapper>
     </AppWrapper>
   );
 }

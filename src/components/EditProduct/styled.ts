@@ -1,21 +1,22 @@
 import styled from 'styled-components/macro'
 
-import { colors } from '../../ui-kit/sharedStyles'
+import { mainColors } from '../../ui-kit/sharedStyles'
 import {
   ContentWrapper,
   Container,
 } from '../App/styled'
 
-export const EditContainer = styled(Container)`
-  /* border: 1px solid ${colors.primary5};
-  background-color: ${colors.neutral5} */
-`
+export const EditContainer = styled(Container)``
 
 export const EditProductContainer = styled(ContentWrapper)`
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   min-height: auto;
   justify-content: center;
-  background-color: ${colors.neutral2};
+  background-color: ${mainColors.text};
+  border-radius: 6px;
 `
 
 export const EditProductButtons = styled.div`
@@ -26,7 +27,8 @@ export const EditProductButtons = styled.div`
   justify-content: center;
   align-items: center;
   gap: 5px;
-  border: 1px solid ${colors.primary5};
+  border: 1px solid ${mainColors.primaryText};
+  border-radius: 6px;
 `
 
 export const ButtonsTitle = styled.div`

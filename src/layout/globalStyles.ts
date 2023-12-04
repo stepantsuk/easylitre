@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
-import { colors, fontFamily } from '../ui-kit/sharedStyles'
+import { newColors, fontFamily } from '../ui-kit/sharedStyles'
 
 export const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
@@ -15,8 +15,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
-    color: ${colors.neutral10};
-    background-color: ${colors.neutral2};
   }
 
   h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -32,7 +30,6 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${colors.neutral10};
   }
 
   button, input, select, textarea {

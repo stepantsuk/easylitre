@@ -1,15 +1,17 @@
 import styled from 'styled-components/macro'
 
-import { colors } from '../../ui-kit/sharedStyles'
+import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
 
 export const ProductItemContainer = styled.li`
   display: flex;
   flex-direction: column;
-  padding: 2px;
+  padding: 4px;
   gap: 2px;
-  border: 1px solid ${colors.primary5};
+  border: 1px solid ${mainColors.primaryText};
+  border-radius: 6px;
   width: 100%;
-  color: ${colors.primary5};
+  color: ${mainColors.primaryText};
+  box-shadow: ${boxShadows.main};
 `
 
 export const ProductTitle = styled.div`
@@ -34,7 +36,8 @@ export const ProductTitleRightBlock = styled.div`
 `
 
 export const ProductEditBtn = styled.div`
-  border-bottom: 1px solid ${colors.primary5};
+  border-bottom: 1px solid ${mainColors.primaryText};
+  cursor: pointer;
 `
 
 export const ProductDelete = styled.div`
@@ -43,9 +46,10 @@ export const ProductDelete = styled.div`
   height: 21px;
   justify-content: center;
   align-items: center;
-  color: ${colors.red4};
-  background-color: ${colors.red1};
-  border: 2px solid ${colors.red4};
+  color: ${mainColors.red};
+  border: 2px solid ${mainColors.red};
+  border-radius: 6px;
+  box-shadow: ${boxShadows.main};
   cursor: pointer;
 `
 
@@ -59,6 +63,6 @@ export const InputLexica = styled.div`
   padding: 3px;
   flex: 50%;
   text-align: left;
-  color: ${colors.primary5};
-  border-bottom: 1px solid ${colors.primary5};
+  color: ${mainColors.primaryText};
+  border-bottom: 1px solid ${mainColors.primaryText};
 `

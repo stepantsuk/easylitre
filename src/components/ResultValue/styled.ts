@@ -1,12 +1,14 @@
 import styled from 'styled-components/macro'
 
-import { colors } from '../../ui-kit/sharedStyles'
+import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
 
 export const InputPriceAmount = styled.div`
   flex: 40%;
   padding: 2px;
   font-weight: 600;
-  color: ${colors.primary5};
-  border: 1px solid ${colors.primary4};
+  color: ${mainColors.primaryText};
+  border: 1px solid ${mainColors.primaryText};
   text-align: center;
+  border-radius: 6px;
+  box-shadow: ${boxShadows.main};
 `
