@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/easylitre/static/js/main.85622281.js",
+    "main.js": "/easylitre/static/js/main.0d5fe671.js",
     "index.html": "/easylitre/index.html",
-    "main.85622281.js.map": "/easylitre/static/js/main.85622281.js.map"
+    "main.0d5fe671.js.map": "/easylitre/static/js/main.0d5fe671.js.map"
   },
   "entrypoints": [
-    "static/js/main.85622281.js"
+    "static/js/main.0d5fe671.js"
   ]
 }
