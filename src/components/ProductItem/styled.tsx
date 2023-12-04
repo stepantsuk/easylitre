@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro'
 
 import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
+import closeSvg from '../../assets/close.svg'
 
 export const ProductItemContainer = styled.li`
   display: flex;
@@ -47,9 +48,13 @@ export const ProductDelete = styled.div`
   justify-content: center;
   align-items: center;
   color: ${mainColors.red};
-  border: 2px solid ${mainColors.red};
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  /* border: 2px solid ${mainColors.red}; */
+  /* border-radius: 50%; */
+  /* box-shadow: ${boxShadows.main}; */
+  background-image: url(${closeSvg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   cursor: pointer;
 `
 

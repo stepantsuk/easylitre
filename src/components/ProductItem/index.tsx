@@ -62,9 +62,7 @@ export const ProductItem = ({
           </ProductEditBtn>
           <ProductDelete
             onClick={() => onDeleteProduct(id)}
-          >
-            X
-          </ProductDelete>
+          />
         </ProductTitleRightBlock>
       </ProductTitle>
       <ProductValues>
