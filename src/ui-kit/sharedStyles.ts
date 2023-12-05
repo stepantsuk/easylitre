@@ -34,14 +34,52 @@ export const colors = {
   red5: '#B20000',
 } as const
 
-export const fontFamily = "'Noto Sans', sans-serif"
+export const newColors = {
+  darkBlue: '#5DA2D5',
+  lightBlue: '#90CCF4',
+  greyWhite: '#ECECEC',
+  red: '#F78888',
+  dark: '#01142F',
+  green: '#14A76C',
+} as const
+
+// export const mainColors = {
+//   darkPrimary: '#0097A7',
+//   lightPrimary: '#B2EBF2',
+//   primary: '#00BCD4',
+//   text: '#FFFFFF',
+//   accent: '#9E9E9E',
+//   primaryText: '#212121',
+//   secondaryText: '#757575',
+//   divider: '#BDBDBD',
+//   green: '#4CAF50',
+//   red: '#F44336',
+//   gray: '#BDBDBD',
+// } as const
+
+export const mainColors = {
+  darkPrimary: '#0097A7',
+  lightPrimary: '#B7D4FF',
+  primary: '#7AB1FF',
+  text: '#FFFFFF',
+  accent: '#9E9E9E',
+  primaryText: '#212121',
+  secondaryText: '#757575',
+  divider: '#BDBDBD',
+  green: '#4CAF50',
+  red: '#F44336',
+  gray: '#BDBDBD',
+} as const
+
+export const fontFamily = "'Rubik', sans-serif"
 
 export const boxShadows = {
-  dropdown: '0px 6px 20px rgba(0, 0, 0, 0.05), 0px 2px 6px rgba(0, 0, 0, 0.08), 0px 8px 25px rgba(0, 0, 0, 0.05);',
-  main: '0px 0px 20px rgba(50, 51, 51, 0.05)',
-  picker: '0px 1px 1px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(50, 51, 51, 0.1)',
-  pointOnField: '0px 0px 12px 0px rgba(0, 0, 0, 0.50)',
-  tooltipClue: '0px 2px 8px rgba(0, 0, 0, 0.15)',
+  // dropdown: '0px 6px 20px rgba(0, 0, 0, 0.05), 0px 2px 6px rgba(0, 0, 0, 0.08), 0px 8px 25px rgba(0, 0, 0, 0.05);',
+  // main: '0px 0px 20px rgba(50, 51, 51, 0.05)',
+  // picker: '0px 1px 1px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(50, 51, 51, 0.1)',
+  // pointOnField: '0px 0px 12px 0px rgba(0, 0, 0, 0.50)',
+  // tooltipClue: '0px 2px 8px rgba(0, 0, 0, 0.15)',
+  main: '4px 4px 2px -2px rgba(34, 60, 80, 0.2)',
 } as const
 
 export const pageContainerWidth = '769px'

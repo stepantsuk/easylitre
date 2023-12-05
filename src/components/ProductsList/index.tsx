@@ -5,9 +5,10 @@ import {
 } from '../../config'
 import { ProductItem } from '../ProductItem'
 import { Button } from '../../ui-kit/Button'
+import { Container } from '../App/styled'
 import {
   ProductsContainer,
-  DividerLine,
+  // DividerLine,
   ProductsListHeader,
   ProductsListTitle,
   ProductsListContainer,
@@ -34,41 +35,42 @@ export const ProductsList = ({
   const additionalLexic = isProductsEmpty ? 'пусто...' : ''
 
   return (
-    <ProductsContainer>
-      <DividerLine />
-      <ProductsListHeader>
-        <ProductsListTitle>
-          {`${productsListTitle} ${additionalLexic}`}
-        </ProductsListTitle>
-        {!isProductsEmpty && (
-          <Button
-            buttonType={cleanList}
-            onClick={onCleanList}
-          />
-        )}
-      </ProductsListHeader>
-      <ProductsListContainer>
-        {
-          (!isProductsEmpty)
-          && products.map(({
-            count,
-            id,
-            name,
-            price,
-            weight,
-          }) => (
-            <ProductItem
-              key={id}
-              count={count}
-              id={id}
-              name={name}
-              price={price}
-              weight={weight}
-              onDeleteProduct={onDeleteProduct}
-              onSaveEdit={onSaveEdit}
-            />))
-        }
-      </ProductsListContainer>
-    </ProductsContainer>
+    <Container>
+      <ProductsContainer>
+        <ProductsListHeader>
+          <ProductsListTitle>
+            {`${productsListTitle} ${additionalLexic}`}
+          </ProductsListTitle>
+          {!isProductsEmpty && (
+            <Button
+              buttonType={cleanList}
+              onClick={onCleanList}
+            />
+          )}
+        </ProductsListHeader>
+        <ProductsListContainer>
+          {
+            (!isProductsEmpty)
+            && products.map(({
+              count,
+              id,
+              name,
+              price,
+              weight,
+            }) => (
+              <ProductItem
+                key={id}
+                count={count}
+                id={id}
+                name={name}
+                price={price}
+                weight={weight}
+                onDeleteProduct={onDeleteProduct}
+                onSaveEdit={onSaveEdit}
+              />))
+          }
+        </ProductsListContainer>
+      </ProductsContainer>
+    </Container>
   )
 }

@@ -1,19 +1,20 @@
 import styled from 'styled-components/macro'
 
-import { colors } from '../../ui-kit/sharedStyles'
+import { mainColors } from '../../ui-kit/sharedStyles'
 
 export const ProductsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 100%;
+  margin-top: 5px;
 `
 
-export const DividerLine = styled.div`
-  height: 2px;
-  width: 100%;
-  background-color: ${colors.primary5};
-`
+// export const DividerLine = styled.div`
+//   height: 2px;
+//   width: 100%;
+//   background-color: ${mainColors.primaryText};
+// `
 
 export const ProductsListHeader = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ export const ProductsListTitle = styled.div`
   justify-content: left;
   align-items: center;
   padding-left: 6px;
-  color: ${colors.primary5};
+  color: ${mainColors.primaryText};
   font-weight: 600;
 `
 
