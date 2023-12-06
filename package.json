@@ -1,6 +1,5 @@
 {
   "name": "easylitr",
-  "homepage": "https://stepantsuk.github.io/easylitre/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
