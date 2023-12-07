@@ -1,11 +1,11 @@
-import type { TProductItem } from '../App/App'
+import type { TProductItem } from '../App/hooks/useCalc'
 import {
   lexics,
   BUTTON_TYPE,
 } from '../../config'
 import { ProductItem } from '../ProductItem'
 import { Button } from '../../ui-kit/Button'
-import { Container } from '../App/styled'
+import { Container } from '../../ui-kit/commonStyles'
 import {
   ProductsContainer,
   // DividerLine,
@@ -32,15 +32,15 @@ export const ProductsList = ({
 
   const isProductsEmpty = products.length === 0
 
-  const additionalLexic = isProductsEmpty ? 'пусто...' : ''
+  const additionalLexic = isProductsEmpty ? 'пока пусто...' : ''
 
   return (
     <Container>
       <ProductsContainer>
         <ProductsListHeader>
-          <ProductsListTitle>
+          {<ProductsListTitle>
             {`${productsListTitle} ${additionalLexic}`}
-          </ProductsListTitle>
+          </ProductsListTitle>}
           {!isProductsEmpty && (
             <Button
               buttonType={cleanList}

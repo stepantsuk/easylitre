@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components/macro'
 
 import { BUTTON_TYPE } from '../../config'
-import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
+import { mainColors } from '../../ui-kit/sharedStyles'
 
 export const ButtonContainer = styled.div`
   width: 100%;
   display: flex;
-  /* padding: 5px; */
   color: ${mainColors.gray};
 `
 
@@ -26,8 +25,7 @@ export const ButtonFrame = styled.button<TButtonFrame>`
   font-weight: 600;
   cursor: pointer;
   border: 2px solid ${mainColors.gray};
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  border-radius: 14px;
 
   ${({ buttonType, disabled }) => {
     switch (true) {

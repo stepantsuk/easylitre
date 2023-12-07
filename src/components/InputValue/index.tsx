@@ -15,9 +15,9 @@ import { useModal } from '../../hooks/useModal'
 import {
   InputWrapper,
   InputLexica,
-  Input,
+  InputNum,
   InputPriceAmount,
-} from './styled'
+} from '../../ui-kit/commonStyles'
 
 type TInputValue = {
   countValue: number,
@@ -112,7 +112,7 @@ export const InputValue = ({
       {
         isEditing
           ? (
-            <Input
+            <InputNum
               autoFocus={isEditing}
               onBlur={finishEditingPriceAmount}
               onChange={onChangePriceAmount}
@@ -120,21 +120,13 @@ export const InputValue = ({
               onKeyDown={keyDown}
               inputMode='decimal'
               placeholder={getPlaceHolder(valueType)}
-              // type='number'
-              // step={isPrice ? '0.01' : '1'}
-              // min='0'
               value={priceAmount}
-            // lang='ru'
             />
           )
           : (
             <InputPriceAmount
               onClick={startEditing}
             >
-              {/* {isPrice
-                ? dotToComma(countValue.toFixed(2))
-                : countValue
-              } */}
               {formattedValue(
                 {
                   valueType,

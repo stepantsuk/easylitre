@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
+import { mainColors } from '../../ui-kit/sharedStyles'
 
 export const ProductNameWrapper = styled.div`
   display: flex;
@@ -13,22 +13,23 @@ export const ProductNameLexica = styled.div`
   flex: 30%;
   text-align: left;
   color: ${mainColors.primaryText};
-  border-bottom: 1px solid ${mainColors.primaryText};
 `
 
 export const ProductNameValue = styled.div`
   flex: 70%;
   padding: 3px;
-  font-weight: 400;
+  font-weight: 600;
   color: ${mainColors.primaryText};
-  background-color: ${mainColors.primary};
+  background-color: ${mainColors.primaryAccent};
+  color: white;
+
+
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  border-radius: 14px;
 `
 
 export const ProductNameInput = styled.input`
@@ -38,7 +39,6 @@ export const ProductNameInput = styled.input`
   text-align: center;
   color: ${mainColors.primaryText};
   border: 1px solid ${mainColors.primaryText};
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  border-radius: 14px;
 `
 

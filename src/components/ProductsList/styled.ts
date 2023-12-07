@@ -7,14 +7,7 @@ export const ProductsContainer = styled.div`
   flex-direction: column;
   gap: 5px;
   width: 100%;
-  margin-top: 5px;
 `
-
-// export const DividerLine = styled.div`
-//   height: 2px;
-//   width: 100%;
-//   background-color: ${mainColors.primaryText};
-// `
 
 export const ProductsListHeader = styled.div`
   display: flex;
@@ -24,6 +17,7 @@ export const ProductsListHeader = styled.div`
 export const ProductsListTitle = styled.div`
   width: 100%;
   display: flex;
+  padding: 4px 0;
   justify-content: left;
   align-items: center;
   padding-left: 6px;

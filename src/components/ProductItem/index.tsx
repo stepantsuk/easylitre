@@ -1,4 +1,4 @@
-import type { TProductItem } from '../App/App'
+import type { TProductItem } from '../App/hooks/useCalc'
 import { lexics } from '../../config'
 import { useModal } from '../../hooks/useModal'
 import { EditProduct } from '../EditProduct'
@@ -70,11 +70,13 @@ export const ProductItem = ({
           countValue={weight / 1000}
           lexic={priceWeight}
           price={price}
+          isProductItem={true}
         />
         <ResultPrice
           countValue={count}
           lexic={priceCount}
           price={price}
+          isProductItem={true}
         />
       </ProductValues>
     </ProductItemContainer>
