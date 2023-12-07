@@ -6,7 +6,7 @@ import {
 } from './sharedStyles'
 
 export const Container = styled.div`
-  width: 460px;
+  width: 459px;
   margin: 0 auto;
   
   @media screen and (max-width: ${mobileBreakpoint}) {
