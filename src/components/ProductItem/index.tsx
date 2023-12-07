@@ -1,4 +1,4 @@
-import type { TProductItem } from '../App/App'
+import type { TProductItem } from '../App/hooks/useCalc'
 import { lexics } from '../../config'
 import { useModal } from '../../hooks/useModal'
 import { EditProduct } from '../EditProduct'

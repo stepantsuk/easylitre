@@ -1,13 +1,25 @@
 import styled from 'styled-components/macro'
 
-import { boxShadows, mainColors } from '../../ui-kit/sharedStyles'
+import {
+  mobileBreakpoint,
+  mainColors,
+  boxShadows,
+} from './sharedStyles'
+
+export const Container = styled.div`
+  width: 769px;
+  margin: 0 auto;
+  
+  @media screen and (max-width: ${mobileBreakpoint}) {
+    width: 90%;
+  }
+`
 
 export const InputWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 5px;
   width: 100%;
-  /* padding: 5px; */
 `
 
 export const InputLexica = styled.div`
@@ -33,7 +45,7 @@ export const InputPriceAmount = styled.div`
   box-shadow: ${boxShadows.main};
 `
 
-export const Input = styled.input`
+export const InputNum = styled.input`
   min-width: 0;
   flex: 40%;
   padding: 2px;

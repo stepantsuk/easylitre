@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import type { TProductItem } from '../App/App'
+import type { TProductItem } from '../App/hooks/useCalc'
 import {
   lexics,
   VALUE_TYPE,

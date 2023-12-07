@@ -1,10 +1,8 @@
 import styled from 'styled-components/macro'
 
 import { mainColors } from '../../ui-kit/sharedStyles'
-import {
-  ContentWrapper,
-  Container,
-} from '../App/styled'
+import { ContentWrapper } from '../App/styled'
+import { Container } from '../../ui-kit/commonStyles'
 
 export const EditContainer = styled(Container)``
 

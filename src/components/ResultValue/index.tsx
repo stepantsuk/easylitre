@@ -1,7 +1,7 @@
 import {
   InputWrapper,
   InputLexica,
-} from '../InputValue/styled'
+} from '../../ui-kit/commonStyles'
 
 import { InputPriceAmount } from './styled'
 

@@ -60,6 +60,7 @@ export const newColors = {
 export const mainColors = {
   darkPrimary: '#0097A7',
   lightPrimary: '#B7D4FF',
+  newAccent: '#3d3bff',
   primary: '#7AB1FF',
   text: '#FFFFFF',
   accent: '#9E9E9E',

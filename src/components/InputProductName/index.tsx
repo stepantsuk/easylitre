@@ -20,7 +20,7 @@ import {
 type TInputProductName = {
   lexic: string,
   productName: string,
-  handleSetName: React.Dispatch<React.SetStateAction<string>>
+  handleSetName: (str: string) => void,
 }
 
 const getDefaultNameInput = (nameStr: string) => nameStr === DEFAULT_PRODUCT_TITLE ? DEFAULT_PRODUCT_TITLE : nameStr
