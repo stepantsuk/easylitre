@@ -9,12 +9,14 @@ type TResultPrice = {
   countValue: number,
   lexic: string,
   price: number,
+  isProductItem?: boolean,
 }
 
 export const ResultPrice = ({
   countValue,
   lexic,
   price,
+  isProductItem,
 }: TResultPrice) => {
   const showDash = countValue === 0 || price === 0
 
@@ -41,7 +43,7 @@ export const ResultPrice = ({
       <InputLexica>
         {lexic}
       </InputLexica>
-      <InputPriceAmount>
+      <InputPriceAmount isProductItem={isProductItem}>
         {showDash
           ? '-'
           : getPrice(price, countValue)

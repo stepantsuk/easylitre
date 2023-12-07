@@ -13,6 +13,7 @@ export const ProductItemContainer = styled.li`
   width: 100%;
   color: ${mainColors.primaryText};
   box-shadow: ${boxShadows.main};
+  background-color: #d7e3f5;
 `
 
 export const ProductTitle = styled.div`

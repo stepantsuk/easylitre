@@ -70,11 +70,13 @@ export const ProductItem = ({
           countValue={weight / 1000}
           lexic={priceWeight}
           price={price}
+          isProductItem={true}
         />
         <ResultPrice
           countValue={count}
           lexic={priceCount}
           price={price}
+          isProductItem={true}
         />
       </ProductValues>
     </ProductItemContainer>

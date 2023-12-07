@@ -32,7 +32,7 @@ export const ContentWrapper = styled.div`
 `
 
 export const AppHeaderFrame = styled.div`
-  background-color: ${mainColors.lightPrimary};
+  /* background-color: ${mainColors.lightPrimary}; */
 `
 
 export const AppHeader = styled.div`
@@ -49,7 +49,7 @@ export const AppTitle = styled.h1`
 `
 
 export const CalculatorFrame = styled.div`
-  background-color: ${mainColors.lightPrimary};
+  /* background-color: ${mainColors.lightPrimary}; */
   width: 100%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
