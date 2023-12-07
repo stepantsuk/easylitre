@@ -1,3 +1,9 @@
+# Main
+This project is my first try to make pwa. So, view is for mobile first.
+You can install this app to you phone by:
+1. visiting url https://stepantsuk.github.io/easylitre/
+2. next step depends on your browser you have to click in browser menu on 'download app'/'install app'/'save to home screen'/'share and then save or download or install'
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
