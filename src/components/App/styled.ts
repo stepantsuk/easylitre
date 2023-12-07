@@ -1,9 +1,6 @@
 import styled from 'styled-components/macro'
 
-import {
-  mobileBreakpoint,
-  mainColors,
-} from '../../ui-kit/sharedStyles'
+import { mobileBreakpoint } from '../../ui-kit/sharedStyles'
 
 
 export const AppWrapper = styled.div`
@@ -23,10 +20,4 @@ export const Container = styled.div`
 `
 
 export const ContentWrapper = styled.div`
-  /* padding-top: 10px; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  gap: 5px; */
 `

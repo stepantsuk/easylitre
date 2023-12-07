@@ -1,18 +1,18 @@
 import styled from 'styled-components/macro'
 
-import { mainColors, boxShadows } from '../../ui-kit/sharedStyles'
+import { mainColors } from '../../ui-kit/sharedStyles'
 import closeSvg from '../../assets/close.svg'
 
 export const ProductItemContainer = styled.li`
   display: flex;
   flex-direction: column;
   padding: 4px;
-  gap: 2px;
+  gap: 4px;
   border: 1px solid ${mainColors.primaryText};
-  border-radius: 6px;
+  border-radius: 12px;
   width: 100%;
   color: ${mainColors.primaryText};
-  box-shadow: ${boxShadows.main};
+  background-color: ${mainColors.grayAccent};
 `
 
 export const ProductTitle = styled.div`
@@ -47,10 +47,6 @@ export const ProductDelete = styled.div`
   height: 21px;
   justify-content: center;
   align-items: center;
-  color: ${mainColors.red};
-  /* border: 2px solid ${mainColors.red}; */
-  /* border-radius: 50%; */
-  /* box-shadow: ${boxShadows.main}; */
   background-image: url(${closeSvg});
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,5 +65,4 @@ export const InputLexica = styled.div`
   flex: 50%;
   text-align: left;
   color: ${mainColors.primaryText};
-  border-bottom: 1px solid ${mainColors.primaryText};
 `

@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import {
   mobileBreakpoint,
   mainColors,
-  boxShadows,
 } from './sharedStyles'
 
 export const Container = styled.div`
@@ -27,22 +26,21 @@ export const InputLexica = styled.div`
   flex: 60%;
   text-align: left;
   color: ${mainColors.primaryText};
-  border-bottom: 1px solid ${mainColors.primaryText};
 `
 
 export const InputPriceAmount = styled.div`
   flex: 40%;
   padding: 3px;
   font-weight: 600;
-  color: ${mainColors.primaryText};
-  background-color: ${mainColors.primary};
+  color: white;
+
+  background-color: ${mainColors.primaryAccent};
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  border-radius: 14px;
 `
 
 export const InputNum = styled.input`
@@ -52,6 +50,5 @@ export const InputNum = styled.input`
   text-align: center;
   color: ${mainColors.primaryText};
   border: 1px solid ${mainColors.primaryText};
-  border-radius: 6px;
-  box-shadow: ${boxShadows.main};
+  border-radius: 14px;
 `

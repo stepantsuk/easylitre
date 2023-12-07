@@ -3,13 +3,11 @@ import styled from 'styled-components/macro'
 import { mainColors } from '../../ui-kit/sharedStyles'
 
 export const AppHeaderFrame = styled.div`
-  background-color: ${mainColors.lightPrimary};
 `
 
 export const AppHeaderContainer = styled.div`
   padding: 10px 0;
-  /* background-color: ${mainColors.newAccent}; */
-  background-color: #3D3bff;
+  background-color: ${mainColors.primaryAccent};
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 `

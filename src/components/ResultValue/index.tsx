@@ -9,20 +9,16 @@ type TResultPrice = {
   countValue: number,
   lexic: string,
   price: number,
+  isProductItem?: boolean,
 }
 
 export const ResultPrice = ({
   countValue,
   lexic,
   price,
+  isProductItem,
 }: TResultPrice) => {
   const showDash = countValue === 0 || price === 0
-
-  // const getPrice = (priceItem: number, count: number) => {
-  //   const result = ((Number(priceItem.toFixed(2))) / count).toFixed(2)
-  //   return dotToComma(result)
-  //   // return ((Number(priceItem.toFixed(2))) / count).toLocaleString()
-  // }
 
   const getPrice = (priceItem: number, count: number) => {
     const price = priceItem / count
@@ -41,7 +37,7 @@ export const ResultPrice = ({
       <InputLexica>
         {lexic}
       </InputLexica>
-      <InputPriceAmount>
+      <InputPriceAmount isProductItem={isProductItem}>
         {showDash
           ? '-'
           : getPrice(price, countValue)

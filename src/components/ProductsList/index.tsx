@@ -32,15 +32,15 @@ export const ProductsList = ({
 
   const isProductsEmpty = products.length === 0
 
-  const additionalLexic = isProductsEmpty ? 'пусто...' : ''
+  const additionalLexic = isProductsEmpty ? 'пока пусто...' : ''
 
   return (
     <Container>
       <ProductsContainer>
         <ProductsListHeader>
-          <ProductsListTitle>
+          {<ProductsListTitle>
             {`${productsListTitle} ${additionalLexic}`}
-          </ProductsListTitle>
+          </ProductsListTitle>}
           {!isProductsEmpty && (
             <Button
               buttonType={cleanList}
